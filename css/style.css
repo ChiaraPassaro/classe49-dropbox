@@ -1,0 +1,229 @@
+:root {
+  --font-base-color: #0D0D0D;
+  --blue: #0061ff;
+  --blue-light: #3b85ff;
+  --celestine: #B3D0E7;
+  --header-height: 2.8em;
+  --jumbo-margin-neg: -5em;
+  --jumbo-margin: 12em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--font-base-color);
+}
+
+.container {
+  max-width: 1320px;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.menu-inline {
+  list-style: none;
+}
+.menu-inline li{
+  display: inline-block;
+  padding: 0 0.5em;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Link and buttons */
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+
+a.btn,
+a.btn:visited {
+  /* display: inline; con inline se il bottone non ha spazio su una riga si spezzerà */
+  display: inline-block;
+  line-height: 200%;
+  padding: 0.3em 1em;
+  background-color: var(--blue);
+  color: white;
+  text-decoration: none;
+}
+a.btn:hover, 
+a.btn:active, 
+a.btn:focus {
+  text-decoration: none;
+  background-color: var(--blue-light);
+}
+a.btn.big{
+  line-height: 260%;
+}
+
+
+/* Utilities */
+.width-30 {
+  width: 30%;
+}
+.width-65 {
+  width: 65%;
+}
+.width-70 {
+  width: 70%;
+}
+.width-80 {
+  width: 80%;
+}
+.width-90 {
+  width: 90%;
+}
+.width-100 {
+  width: 100%;
+}
+.max-width-100 {
+  max-width: 100%;
+}
+
+.mr-auto {
+  margin: 0 auto;
+}
+
+/* Layout */
+.header {
+  position: fixed;
+  /* ricordiamo sempre di posizionare rispetto a qualcosa */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0 1em;
+  border-bottom: 1px solid rgb(181, 181, 181);
+  background-color: white;
+}
+.header > div,
+.header > nav {
+  line-height: var(--header-height);
+}
+.header .logo {
+  width: 10%;
+  padding: 1em 0;
+}
+.header .logo img {
+  width: 85%;
+  vertical-align: sub;
+}
+.header .header-nav-left, 
+.header .header-nav-right {
+  width: 45%;
+}
+.header .header-nav-left li a:not(.btn), 
+.header .header-nav-right li a:not(.btn) {
+  display: block;
+  margin: 0 0.7em;
+  padding: 1em 0;
+  border-bottom: 2px solid white;
+  color: var(--font-base-color);
+}
+.header .menu-inline li a:hover:not(.btn), 
+.header .menu-inline li a:active:not(.btn), 
+.header .menu-inline li a:focus:not(.btn){
+  border-bottom: 2px solid #000;
+  text-decoration: none;
+}
+
+.jumbo {
+  /* height: 58vh; evitiamo le altezze in vh se non siamo in un layout app, dove nulla esce dalla viewport*/ 
+  /* padding-top: 6em; */
+  margin-top: var(--header-height);
+  margin-bottom: var(--jumbo-margin);
+  padding-top: 2em;
+  background-color: var(--celestine);
+}
+.jumbo-title {
+  margin-bottom: 0.5em;
+  font-size: 4.8em;
+  line-height: 1.45em;
+}
+.jumbo .container {
+  position: relative;
+  bottom: var(--jumbo-margin-neg);
+}
+.jumbo-paragraph {
+  margin-bottom: 1em;
+}
+.jumbo .call-to-action {
+  margin-bottom: 2em;
+}
+.jumbo .call-to-action > * {
+  margin: 1em 0;
+}
+.go-to {
+  color: var(--font-base-color);
+  font-size: 3em;
+}
+
+/* Main */
+.title-section {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+}
+.invoice {
+  line-height: 1em;
+  font-size: 1em;
+}
+.invoice input[type="radio"]{
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border: 2px solid #999;
+  border-radius: 50%;
+  vertical-align: sub;
+}
+.invoice input[type="radio"]:checked {
+  opacity: 0;
+}
+.invoice label {
+  margin-right: 1em;
+  position: relative;
+  font-size: 1.2em;
+}
+.invoice input:checked + label::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-left: -30px;
+  display: inline-block;
+  border: 4px solid var(--blue);
+  border-radius: 50%;
+}
+.invoice input::not(:checked) + label::before { 
+  display: none;
+}
