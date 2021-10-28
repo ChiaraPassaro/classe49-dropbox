@@ -166,6 +166,7 @@ button.btn.btn-white:focus {
 .blue {
   color: var(--blue);
 }
+
 /* Layout */
 .header {
   position: fixed;
@@ -245,7 +246,7 @@ button.btn.btn-white:focus {
   text-decoration: none;
 }
 
-
+/* Jumbo */
 .jumbo {
   /* height: 58vh; evitiamo le altezze in vh se non siamo in un layout app, dove nulla esce dalla viewport*/ 
   /* padding-top: 6em; */
